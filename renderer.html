@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>System Audio Recorder</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎧 System Audio Recorder</h1>
+    <button onclick="start()">Start Recording</button>
+    <button onclick="stop()">Stop Recording</button>
+    <button onclick="openFolder()">Open Folder</button>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
