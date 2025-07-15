@@ -14,7 +14,7 @@ function createWindow() {
     });
 
     win.loadFile('renderer.html').catch((err) => {
-        console.error("❌ Failed to load HTML:", err);
+        console.error("Failed to load HTML:", err);
       });
     
 }
