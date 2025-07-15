@@ -23,3 +23,22 @@ The go to :
 ### 2. Run Swift CLI
 swiftc main.swift -o record-audio
 ./record-audio
+
+
+
+
+
+#### Explanation of Decisions made
+
+ - Bypassing Broswer Limitations: Broswers don't allow direct system audio capture for privacy/security, so we used a native macOS app in Swift.
+ - Audio Routing: Used BlackHole virtual audio device to route system audio output as input.
+ - AVFoundation: AVAudioEngine is used to capture the system audio and asve it as a .caf file.
+ - Electron Bridge: A electron app wraps the swift binary which allows users to click on "start recording" and "stop recording"
+ - No Microphone Input: We deliberately set the input to BlackHole to ensure only system audio is captured, excluding the mic.
+
+### Trade-offs and Limitations
+
+- Users must install BlackHole manually and route system audio output to it
+- Temporarily users may not hear their own system audio unless they set a multi-output device
+- Recording must be done via desktop app, not via browser due to OS restrictions
+
